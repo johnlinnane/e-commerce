@@ -1,0 +1,167 @@
+[
+
+   {	
+   		"title": "666",
+   		"artist": "Aphrodite's Child",
+   		"format": "LP",
+   		"price": 28.14,
+   		"continent": "Europe",
+   		"image": "666.jpg",
+   		"label": "BMG"
+   },
+   
+   {	
+   		"title": "The Red Tape Machine",
+   		"artist": "Anonima Sound Ltd",
+   		"format": "LP",
+   		"price": 21.98,
+   		"continent": "Europe",
+   		"image": "Anonima.jpg",
+   		"label": "Vinyl Magic"
+   },
+   {	
+   		"title": "Sussex",
+   		"artist": "Bent Wind",
+   		"format": "LP",
+   		"price": 21.10,
+   		"continent": "US",
+   		"image": "BentWind.jpg",
+   		"label": "Ugly Pop"
+   },
+   {	
+   		"title": "The Blues Creation",
+   		"artist": "Blues Creation",
+   		"format": "CD",
+   		"price": 15.81,
+   		"continent": "Asia",
+   		"image": "BluesCreation.jpg",
+   		"label": "WPM"
+   },
+   {	
+   		"title": "Budgie",
+   		"artist": "Budgie",
+   		"format": "LP",
+   		"price": 21.98,
+   		"continent": "Europe",
+   		"image": "BudgieSame.jpg",
+   		"label": "Bad Ass"
+   },
+   {	
+   		"title": "Squawk",
+   		"artist": "Budgie",
+   		"format": "LP",
+   		"price": 21.98,
+   		"continent": "Europe",
+   		"image": "BudgieSquawk.jpg",
+   		"label": "Bad Ass"
+   },
+   {	
+   		"title": "Eponymous",
+   		"artist": "Carmen Maki & Oz",
+   		"format": "CD",
+   		"price": 15.81,
+   		"continent": "Asia",
+   		"image": "CarmenMaki.jpg",
+   		"label": "Flawed Gems"
+   },
+   {	
+   		"title": "Symphony 3",
+   		"artist": "Clearight",
+   		"format": "CD",
+   		"price": 10.54,
+   		"continent": "Europe",
+   		"image": "Clearight.jpg",
+   		"label": "Channel 888"
+   },
+   {	
+   		"title": "The Most Beautiful Day",
+   		"artist": "Exodus",
+   		"format": "CD",
+   		"price": 14.94,
+   		"continent": "Europe",
+   		"image": "Exodus.jpg",
+   		"label": "Muza"
+   },
+   {	
+   		"title": "Flashback",
+   		"artist": "Publishers inc",
+   		"format": "Magazine",
+   		"price": 20.11,
+   		"continent": "Europe",
+   		"image": "FlashbackMag.jpg",
+   		"label": "Unknown"
+   },
+   {	
+   		"title": "The Sound Of 65",
+   		"artist": "The Graham Bond Organization",
+   		"format": "LP",
+   		"price": 20.22,
+   		"continent": "Europe",
+   		"image": "GrahamBond.jpg",
+   		"label": "Repertoire"
+   },
+   {	
+   		"title": "The Insect Trust",
+   		"artist": "The Insect Trust",
+   		"format": "Mini LP",
+   		"price": 17.58,
+   		"continent": "Asia",
+   		"image": "InsectTrust.jpg",
+   		"label": "Big Pink"
+   },
+   {	
+   		"title": "Out Of Uranus",
+   		"artist": "Killing Floor",
+   		"format": "LP",
+   		"price": 22.86,
+   		"continent": "Europe",
+   		"image": "KillingFloor.jpg",
+   		"label": "Repertoire"
+   },
+   {	
+   		"title": "Original Album Series",
+   		"artist": "Passport",
+   		"format": "LP",
+   		"price": 21.09,
+   		"continent": "Europe",
+   		"image": "Passport.jpg",
+   		"label": "Warner Music"
+   },
+   {	
+   		"title": "Original First Album",
+   		"artist": "PYG",
+   		"format": "LP",
+   		"price": 20.11,
+   		"continent": "",
+   		"image": "PYG.jpg",
+   		"label": "Warner Music"
+   },
+
+      {	
+   		"title": "The Two Sides of Tony (T.S.) NcPhee",
+   		"artist": "Tony McPhee",
+   		"format": "CD",
+   		"price": 12.30,
+   		"continent": "Europe",
+   		"image": "TonyMcPhee.jpg",
+   		"label": "Talking Elephant"
+   },
+      {	
+   		"title": "Tri Atma",
+   		"artist": "Tri Atma",
+   		"format": "CD",
+   		"price": 15.82,
+   		"continent": "Europe",
+   		"image": "TriAtma.JPG",
+   		"label": "Sireena"
+   },
+   {	
+   		"title": "Taikakulunen",
+   		"artist": "Woodoo",
+   		"format": "LP",
+   		"price": 21.10,
+   		"continent": "Europe",
+   		"image": "Woodoo.jpg",
+   		"label": "Svart"
+   }
+]

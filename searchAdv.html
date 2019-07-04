@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+
+
+<!-- 
+<script src="//code.jquery.com/jquery-1.10.2.js"
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="style.css">
+
+
+
+<script>
+
+
+// ******************************* SETUP *****************************************
+
+
+var JSON_array;
+
+
+function load_cont(url) {
+	//alert("Page loaded.");
+	$.getJSON(url, function(obj){
+		JSON_array = obj;
+	});
+// 	alert(JSON_array.length);
+}
+var text;
+
+
+function createElement(i) {
+	var newElement = document.createElement('div');
+
+		newElement.style.position = "static";
+		newElement.style.width = "550px";
+		newElement.style.height = "220px";
+		newElement.innerHTML += 
+			'<div style="float:left; padding-right=15px;"><img src="images/' + JSON_array[i].image + '" height="200" width="200"></div>' +
+	
+			'<div style="border:20px;">' + 
+				'Artist: ' + JSON_array[i].artist + '<br>' +
+				'Title: ' + JSON_array[i].title +  '<br>' +
+				'Format: ' + JSON_array[i].format + '<br>' +
+				'Label: ' + JSON_array[i].label + '<br>' +
+				'Price: ' + JSON_array[i].price + '<br>' +
+			'</div>';
+
+
+		newElement.style.background = "#3A3E47";
+		newElement.style.padding = "10px";
+		newElement.style.margin = "15px";
+		newElement.style.color = "#EEEEEE";
+
+		newElement.id = "div" + i;
+
+		document.getElementById('rightCol').appendChild(newElement);
+}
+
+
+
+// ******************************* SEARCH *****************************************
+
+
+
+
+
+
+function filter() {
+	text = document.getElementById("search").value;
+
+	for (var i = 0; i < JSON_array.length; i++) {
+		
+		var elemCheck = document.getElementById('div' + i);
+
+			if (elemCheck === null) {
+				if ((JSON_array[i].title.includes(text)) || (JSON_array[i].artist.includes(text))){
+					createElement(i);
+				} else if (((JSON_array[i].title.includes(text) || 
+									  (JSON_array[i].artist.includes(text))) && 
+									   document.getElementById("div" + i))) {
+					document.body.removeChild(document.getElementById('div' + i));
+				
+					
+
+
+			} // end else if
+		} // end if
+	} // end for
+} // end filter()
+
+
+
+
+// ******************************* CHECKBOX *****************************************
+
+
+
+
+function checkBox() {
+}
+
+
+
+// ******************************* LABEL *****************************************
+
+
+
+function label() {
+}
+
+
+
+// ******************************* SLIDER *****************************************
+
+
+
+function addPriceDiv(p){
+	var price = p;
+	for (var i = 0; i < JSON_array.length; i++) {
+		if (JSON_array[i].price <= price && !document.getElementById("div" + i)) {
+
+			var newElement = document.createElement('div');
+			
+			newElement.style.position = "static";
+			newElement.style.width = "550px";
+			newElement.style.height = "220px";
+			newElement.innerHTML += 
+				'<div style="float:left; padding-right=15px;"><img src="images/' + JSON_array[i].image + '" height="200" width="200"></div>' +
+	
+				'<div style="border:20px;">' + 
+					'Artist: ' + JSON_array[i].artist + '<br>' +
+					'Title: '  + JSON_array[i].title  +  '<br>' +
+					'Format: ' + JSON_array[i].format + '<br>' +
+					'Label: '  + JSON_array[i].label  + '<br>' +
+					'Price: '  + JSON_array[i].price  + '<br>' +
+				'</div>';
+
+
+			newElement.style.background = "#3A3E47";
+			newElement.style.padding = "10px";
+			newElement.style.margin = "15px";
+			newElement.style.color = "#EEEEEE";
+
+			newElement.id = "div" + i;
+			document.getElementById('rightCol').appendChild(newElement);
+			
+		} else if (JSON_array[i].price > price && 
+			document.getElementById("div" + i)) {
+			document.body.removeChild(document.getElementById('div' + i));
+		}
+	}
+}
+	
+	
+	
+
+$(document).ready( function() {
+	$("#slider").slider({min:10.0, max:40.0, value:[25.0]});
+	$("#slider").on(
+		{ slide:
+				function() {
+					var setting = $("#slider").slider("option", "value");
+					document.getElementById("maximum").value = setting;
+					addPriceDiv(setting);
+				}
+		}
+	);
+});
+
+
+
+// ******************************* MAP *****************************************
+
+
+
+function continent(name) {
+	
+	for (var i = 0; i < JSON_array.length; i++) {
+		
+		var elemCheck = document.getElementById('div' + i);
+
+			if (elemCheck === null) {
+				if (JSON_array[i].continent.match(name)){
+					createElement(i);
+				
+				} // end if
+			} // end if
+	} // end for
+} // end func
+
+
+
+</script>
+
+
+
+
+
+
+<style>
+
+body {
+  background-color: #a6a6a6;
+  overflow-x:hidden;
+}
+
+#slider {
+    height: 40px;
+    width: 400px;
+}
+</style>
+
+</head>
+
+
+
+
+
+
+<body onload="load_cont('data.json')">
+
+
+<div class="centerContainer">
+  <p id="rcorners1">Advanced Search<br></p>
+</div>
+
+
+
+<div id="searchContainer">
+  <div id="leftCol">
+
+
+
+<!-- ******************************* SEARCH ***************************************** -->
+
+
+		<p><strong>Search</strong></p>
+
+		<p>
+		<input type="text" id="search" name="searchInput" placeholder="Title / Artist" aria-label="Search input">
+		<br>
+		</p>
+		
+		<button type="button" onclick="filter()" aria-label="Search button">Search Test</button>
+		<br>
+		<br>
+
+
+
+
+<!-- ******************************* CHECKBOX ***************************************** -->
+
+
+
+
+
+
+		<p><strong>Album Type</strong></p>
+
+		<form action="form.php" method="post" aria-label="Album type checklist">
+			<input type="checkbox" name="albumType" value="LP" checked>LP<br>
+			<input type="checkbox" name="albumType" value="CD">CD<br>
+			<input type="checkbox" name="albumType" value="MiniLP">Mini LP<br>
+			<input type="checkbox" name="albumType" value="Magazine">Magazine<br>
+			
+			<!-- <input type="submit" name="formSubmit" value="Submit" /> -->
+
+		</form>
+		<br>
+		<br>
+
+
+
+
+
+
+<!-- ******************************* LABEL ***************************************** -->
+
+
+
+
+
+
+
+		<p><strong>Label</p>
+
+		<form action="http://httpbin.org/post" method="post" aria-label="Label select">
+			<select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select" name="test">
+				<option value="">BMG</option>
+				<option>Vinyl Magic</option>
+				<option>Ugly Pop</option>
+				<option>WPM</option>
+				<option>Bad Ass</option>
+				<option>Flawed Gems</option>
+				<option>Channel 888</option>
+				<option>Muza</option>
+				<option>Unknown</option>
+				<option>repertoire</option>
+				<option>Big Pink</option>
+				<option>Warner Music</option>
+				<option>Talking Elephant</option>
+				<option>Sireena</option>
+				<option>Svart</option>
+			</select>
+		</form>
+
+		<br>
+		<br>
+
+
+
+
+
+
+<!-- ******************************* SLIDER ***************************************** -->
+
+
+		<p><strong>Price</strong></p>
+
+		<input type="text" name="maximum" id="maximum">
+
+		<div id="slider" aria-label="Price slider">
+		</div>
+
+
+
+
+<!-- ******************************* MAP ***************************************** -->
+
+
+
+
+
+
+		<p><strong>Continent</strong></p>
+		
+		<div style="width: 100vw">
+		<img id="worldImg" src="worldmap.jpg" width=300px alt="Planets" usemap="#worldmap" alt="World map search image"/><br>
+		</div>
+		<map name="worldmap">
+			<area shape="rect" coords="0,0,85,120" href="" id="mapUS" onClick="continent('US'); return false;" aria-label="US section"/>
+			<area shape="rect" coords="85,0,120,60" href="" id="mapEurope" onClick="continent('Europe'); return false;" aria-label="Europe section"/>
+			<area shape="rect" coords="120,0,300,60" href="" id="mapAsia" onClick="continent('Asia'); return false;" aria-label="Asia section"/>
+		</map>
+		<br>
+		
+
+  </div> <!-- end leftCol div -->
+
+
+  <div id="rightCol">
+  </div>
+
+
+</div> <!-- end searchContainer div -->
+
+</body>
+</html>

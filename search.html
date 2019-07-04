@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
+<link rel="stylesheet" href="style.css">
+
+
+<script>
+
+var JSON_array;
+var text;
+
+function load_cont(url) {
+	$.getJSON(url, function(obj){
+		JSON_array = obj;
+	});
+}
+
+
+function createElement(i) {
+
+					var newElement = document.createElement('div');
+
+					newElement.style.position = "static";
+					newElement.style.width = "550px";
+					newElement.style.height = "220px";
+					newElement.innerHTML += 
+						'<div style="float:left; padding-right=15px;"><img src="images/' + JSON_array[i].image + '" height="200" width="200"></div>' +
+				
+						'<div style="border:20px;">' + 
+							'Artist: ' + JSON_array[i].artist + '<br>' +
+							'Title: ' + JSON_array[i].title +  '<br>' +
+							'Format: ' + JSON_array[i].format + '<br>' +
+							'Label: ' + JSON_array[i].label + '<br>' +
+							'Price: &euro;' + JSON_array[i].price + '<br>' +
+				
+						'</div>';
+
+					newElement.style.background = "#3A3E47";
+					newElement.style.padding = "10px";
+					newElement.style.margin = "15px";
+					newElement.style.color = "#EEEEEE";
+
+					newElement.id = "div" + i;
+
+					document.getElementById('rightCol').appendChild(newElement);
+}
+
+
+function filter() {
+	text = document.getElementById("search").value;
+
+	for (var i = 0; i < JSON_array.length; i++) {
+		
+		var elemCheck = document.getElementById('div' + i);
+
+			if (elemCheck === null) {
+				if ((JSON_array[i].title.includes(text)) || (JSON_array[i].artist.includes(text))) {
+					createElement(i);
+				} // end if
+			} // end if
+	} // end for
+} // end filter()
+
+
+</script>
+
+
+
+<style>
+</style>
+
+</head>
+
+
+<body onload="load_cont('data.json')">
+
+<div class="centerContainer">
+<p id="rcorners1">Search<br></p>
+</div>
+
+<div id="searchContainer">
+	<div id="leftCol">
+
+		<div style="padding:10px;">
+		<input type="text" name="searchInput" placeholder="Type Search Here" id="search" aria-label="Search bar">
+		</div>
+
+		<div style="padding:10px;">
+		<button type="button" onclick="filter() "aria-label="Search button">search</button>
+		</div>
+
+
+		<div style="padding:10px;">
+		<a href="searchAdv.html" aria-label="Advanced search">
+		Advanced Search
+		</a>
+		</div>
+	</div>
+
+	<div id="rightCol">
+	</div>
+</div>
+
+</body>
+</html>
