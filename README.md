@@ -1,3 +1,16 @@
+# E-Commerce Website and Accessibility Report
+
+### Description
+
+Redesign of existing record seller E-commerce website, including Acessibility Report WAVE Web Accessibility Evaluation Tool
+
+### Technologies Used
+
+JavaScript, HTML, CSS, jQuery, WAVE Web Accessibility Evaluation Tool
+
+### Acessibility Report
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -171,12 +184,6 @@ Retrieved from: https://faculty.washington.edu/jtenenbg/courses/360/f04/sessions
 
 <hr style="width:80%">
 
-<footer>
-<div class="centreText">
-<p>Report written by John Linnane 2019. <br>
-Contact: 118227214@umail.ucc.ie</p>
-</div>
-</footer>
 
 </div> <!-- textContainer -->
 
