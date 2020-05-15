@@ -2,7 +2,7 @@
 
 ## Description
 
-Redesign of existing record seller E-commerce website, including Acessibility Report using WAVE Web Accessibility Evaluation Tool and incorporating Schneiderman’s Eight Golden Rules of interface design.
+Redesign of existing record seller E-commerce website, including Accessibility Report using WAVE Web Accessibility Evaluation Tool and incorporating Schneiderman’s Eight Golden Rules of interface design.
 
 ## Technologies Used
 
