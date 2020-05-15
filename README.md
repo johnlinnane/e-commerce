@@ -1,14 +1,14 @@
 # E-Commerce Website and Accessibility Report
 
-### Description
+## Description
 
 Redesign of existing record seller E-commerce website, including Acessibility Report WAVE Web Accessibility Evaluation Tool
 
-### Technologies Used
+## Technologies Used
 
 JavaScript, HTML, CSS, jQuery, WAVE Web Accessibility Evaluation Tool
 
-### Acessibility Report
+## Acessibility Report
 
 
 
@@ -25,7 +25,6 @@ JavaScript, HTML, CSS, jQuery, WAVE Web Accessibility Evaluation Tool
 <body>
 
 <div id="textContainer">
-<hr style="width:60%">
 
 <p>This reports contains an assessment of eCommerce website Doug Larson Imports, which provides a visual catalogue of records, CDs and magazines, specialising in vintage and psychadelic recordings from the 1960s and 70s. It contains a substantial database of products which are accessed through various search functionalities. A prototype website was created which seeks to improve on some user design aspects. These changes were based around Schneiderman’s Eight Golden Rules of interface design. [1]</p>
 
