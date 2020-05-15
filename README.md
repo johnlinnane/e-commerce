@@ -1,12 +1,4 @@
-# Prototype E-Commerce Website
 
-A redesign of a record selling website (including Usability and Accessibiliity Report).
-
-### Technologies Used
-
-JavaScript, HTML, CSS, jQuery, WAVE Web Accessibility Evaluation Tool
-
-### Accessibility Report
 <!DOCTYPE html>
 <html lang="en">
   
